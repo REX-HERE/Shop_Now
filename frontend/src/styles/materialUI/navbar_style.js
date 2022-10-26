@@ -1,6 +1,6 @@
 import {fade, makeStyles} from "@material-ui/core/styles";
 
-const useNavBarStyles = makeStyles(theme => ({
+const NavBarStyles = makeStyles(theme => ({
     growQuarter: {
         flexGrow: 0.25,
     },
@@ -157,4 +157,4 @@ const useNavBarStyles = makeStyles(theme => ({
 
 
 
-export default NavbarStyles; 
+export default NavBarStyles; 
