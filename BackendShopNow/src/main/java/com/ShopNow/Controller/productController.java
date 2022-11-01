@@ -4,6 +4,7 @@ import com.ShopNow.DAO.ProductDAO;
 import com.ShopNow.Models.product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -17,6 +18,11 @@ public class productController {
     @GetMapping("/products")
     List<product> getAllProducts(){
         return productDao.getAllProducts();
+    }
+
+    @GetMapping("/products/{id}")
+    product getProductById(@PathVariable String id){
+        return productDao.getProductById(id);
     }
 
 }
