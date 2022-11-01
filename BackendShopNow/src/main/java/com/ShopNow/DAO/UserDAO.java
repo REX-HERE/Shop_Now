@@ -17,7 +17,7 @@ public class UserDAO {
         try{
             user x = new user();
 
-            String query = "SELECT * FROM user";
+            String query = "SELECT * FROM user where first_name=?";
             List<user> result = jdbc.query(query, new BeanPropertyRowMapper<>(user.class));
             return result;
         } catch (Exception e){
