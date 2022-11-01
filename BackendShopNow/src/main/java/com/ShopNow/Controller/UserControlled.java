@@ -14,6 +14,6 @@ public class UserControlled {
     UserDAO userDAO;
     @GetMapping("/all/users")
     List<user> fetchAll(){
-        return userDAO.getAllusers();
+        return userDAO.getAllusers("pkm");
     }
 }
