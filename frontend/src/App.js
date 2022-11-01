@@ -1,10 +1,13 @@
 import React, {useState} from "react";
 import './App.css';
-import {Router, Route, Switch, Link} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 
-// import NavBar from "./components/items/navbar/Navbar";
+import Navbar from "./components/items/navbar/Navbar";
+import { TabPanelList } from "./components/items/navbar/tabPanelList";
 import { LogInfo } from "./constants/constant_vals";
-import history from "./history";
+// import history from "./history";
+import { Provider } from 'react-redux';
+import store from './state/store/store';
 
 const App = () => {
     if(LogInfo){
@@ -18,10 +21,16 @@ const App = () => {
 
 
     return (
-        <Router history={history}>
-          {/* <NavBar error_handler={seterror_app_handler}/> */}
-          <div>hey</div>
-        </Router>
+      <Provider store={store}>
+
+        <Routes>
+          <Navbar errorHandler={seterror_app_handler}/>
+          <TabPanelList/>
+          
+          <Route path="/" element={<Home/>}></Route>
+
+        </Routes>
+      </Provider>
     )
 }
 

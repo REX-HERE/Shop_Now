@@ -22,6 +22,7 @@ export const MANAGE_GOOGLE_AUTH_SIGN_IN= "MANAGE_GOOGLE_AUTH_SIGN_IN";
 export const MANAGE_GOOGLE_AUTH_SIGN_OUT= "MANAGE_GOOGLE_AUTH_SIGN_OUT";
 export const MANAGE_SIGN_UP_ERROR= "MANAGE_SIGN_UP_ERROR";
 export const RESET_SIGN_UP= "RESET_SIGN_UP";
+export const TAB_HOVER= "TAB_HOVER";
 
 export const SHIPPING_ADDRESS_RECIEVED = "SHIPPING_ADDRESS_RECIEVED";
 export const RESET_SHIPPING_ADDRESS = "RESET_SHIPPING_ADDRESS";
@@ -55,6 +56,15 @@ export const RESET_FILTER_Q_STATUS = "RESET_FILTER_Q_STATUS";
 export const DELIVERY_CHARGES = "DELIVERY_CHARGES";
 export const RESET_DELIVERY_CHARGES = "RESET_DELIVERY_CHARGES";
 export const SAVED_SORTED_LIST = "SAVED_SORTED_LIST";
+export const ADD_SELECTED_CATEGORY = "ADD_SELECTED_CATEGORY";
+export const REMOVE_SELECTED_CATEGORY = "REMOVE_SELECTED_CATEGORY";
+export const RESET_SELECTED_CATEGORY = "RESET_SELECTED_CATEGORY";
+export const LOAD_SELECTED_CATEGORY_FROM_URL = "LOAD_SELECTED_CATEGORY_FROM_URL";
+export const SELECT_SORT = "SELECT_SORT";
+export const RESET_SELECT_SORT = "RESET_SELECT_SORT";
+export const CLEAR_ALL_FILTERS = "CLEAR_ALL_FILTERS";
+export const SELECT_PRODUCT_PAGE = "SELECT_PRODUCT_PAGE";
+export const RESET_SELECT_PRODUCT_PAGE = "RESET_SELECT_PRODUCT_PAGE";
 
 export const SignIn = formValues => async dispatch => {
 
@@ -214,7 +224,7 @@ export const SetShippingAddress = payload => {
         console.info(`[ACTION]: setShippingAddress, payload = ${JSON.stringify(payload)}`) //user input
     }
     return {
-        type: SHIPPING_ADDRESS,
+        type: SHIPPING_ADDRESS_RECIEVED,
         payload: payload
     }
 }
@@ -225,7 +235,7 @@ export const SetPaymentInfo = payload => {
     }
     
     return {
-        type: PAYMENT_INFO,
+        type: PAYMENT_DATA_RECIEVED,
         payload: payload
     }
 }
