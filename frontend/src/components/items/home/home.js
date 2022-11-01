@@ -11,6 +11,7 @@ import {Dimmer} from "semantic-ui-react";
 import {StyledSegment, StyledDimmer} from "../../../styles/semanticUI/customStyles"
 import DocumentTitle from "../../common_ui/documentTitle";
 import { Hidden } from "@material-ui/core";
+import HomeMenuIcons from "./homeMenuIcons";
 
 
 const Home = props => {
