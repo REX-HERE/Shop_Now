@@ -27,4 +27,6 @@ public class cartDAO {
         return null;
     }
 
+    public int insertUser()
+
 }

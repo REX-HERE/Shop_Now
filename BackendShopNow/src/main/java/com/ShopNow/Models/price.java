@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class price {
     String productid;
-    int lowerprice;
-    int upperprice;
+    Integer lowerprice;
+    Integer upperprice;
 }
