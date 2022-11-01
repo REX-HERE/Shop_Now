@@ -13,11 +13,12 @@ public class UserDAO {
     @Autowired
     JdbcTemplate jdbc;
 
-    public List<user> getAllusers(String demo){
+    public List<user> getAllusers(){
         try{
+            user x = new user();
 
-            String query = "SELECT * FROM user where firstname=?";
-            List<user> result = jdbc.query(query, new BeanPropertyRowMapper<>(user.class), demo);
+            String query = "SELECT * FROM user where first_name=?";
+            List<user> result = jdbc.query(query, new BeanPropertyRowMapper<>(user.class));
             return result;
         } catch (Exception e){
             System.out.println(e.getMessage());
