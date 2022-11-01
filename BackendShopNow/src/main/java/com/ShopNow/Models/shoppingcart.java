@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class shoppingcart {
     String userid;
-    int price;
+    Integer price;
 }

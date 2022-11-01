@@ -10,11 +10,11 @@ import lombok.NoArgsConstructor;
 public class product {
     String productid;
     String pname;
-    int price;
-    int availablequantity;
-    int ratings;
+    Integer price;
+    Integer availablequantity;
+    Integer ratings;
     String imageURl;
-    int deleverytime;
+    Integer deleverytime;
     String verificationstatus;
 
 }
