@@ -29,7 +29,7 @@ public class ProductDAO {
         return null;
     }
 
-    public product getProductById(String id){
+    public product getProductById(Integer id){
         try {
             String query = "Select * from product where productid=?";
 

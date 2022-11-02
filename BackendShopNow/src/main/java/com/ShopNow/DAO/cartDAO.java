@@ -15,10 +15,10 @@ public class cartDAO {
     @Autowired
     JdbcTemplate cartJdbc;
 
-    public cartcontains getCartData(String userid){
+    public List<cartcontains> getCartData(String userid){
         try{
             String query = "select * from cartcontains where userid=?";
-            cartcontains ans = cartJdbc.queryForObject(query, new BeanPropertyRowMapper<>(cartcontains.class), userid);
+            List<cartcontains> ans = cartJdbc.query(query, new BeanPropertyRowMapper<>(cartcontains.class), userid);
             return ans;
 
         } catch (Exception e){
@@ -27,7 +27,7 @@ public class cartDAO {
         return null;
     }
 
-    public Integer insertUser(String userid, Integer price, String productid, Integer productquantity){
+    public Integer insertUser(String userid, Integer price, Integer productid, Integer productquantity){
         String InsertQuery = "insert into cartcontains(userid,price,productid,productquantity) values(?,?,?,?)";
         Integer update = this.cartJdbc.update(InsertQuery,new Object[]{userid,price,productid,productquantity});
         return update;

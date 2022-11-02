@@ -15,13 +15,13 @@ public class productController {
     @Autowired
     ProductDAO productDao;
 
-    @GetMapping("/products")
+    @GetMapping("/")
     List<product> getAllProducts(){
         return productDao.getAllProducts();
     }
 
     @GetMapping("/products/{id}")
-    product getProductById(@PathVariable String id){
+    product getProductById(@PathVariable Integer id){
         return productDao.getProductById(id);
     }
 
