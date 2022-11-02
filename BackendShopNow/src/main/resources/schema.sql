@@ -8,7 +8,7 @@ create table user (
   firstname varchar(225),
   lastname varchar(225),
   password varchar(225),
-  address varchar(516)
+  address varchar(516) 
 );
 
 
