@@ -13,7 +13,7 @@ public class cartController {
     cartDAO cartDao;
 
     @GetMapping("/cart/{userid}")
-    public List<cartcontains> getCartByUserId(@PathVariable String userid){
+    public cartcontains getCartByUserId(@PathVariable String userid){
         return cartDao.getCartData(userid);
     }
 
