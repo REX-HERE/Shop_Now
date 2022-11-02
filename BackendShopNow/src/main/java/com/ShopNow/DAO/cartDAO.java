@@ -15,10 +15,10 @@ public class cartDAO {
     @Autowired
     JdbcTemplate cartJdbc;
 
-    public cartcontains getCartData(String userid){
+    public List<cartcontains> getCartData(String userid){
         try{
             String query = "select * from cartcontains where userid=?";
-            cartcontains ans = cartJdbc.queryForObject(query, new BeanPropertyRowMapper<>(cartcontains.class), userid);
+            List<cartcontains> ans = cartJdbc.query(query, new BeanPropertyRowMapper<>(cartcontains.class), userid);
             return ans;
 
         } catch (Exception e){
