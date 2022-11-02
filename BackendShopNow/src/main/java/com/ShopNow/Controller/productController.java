@@ -21,7 +21,7 @@ public class productController {
     }
 
     @GetMapping("/products/{id}")
-    product getProductById(@PathVariable String id){
+    product getProductById(@PathVariable Integer id){
         return productDao.getProductById(id);
     }
 

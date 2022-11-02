@@ -27,7 +27,7 @@ public class cartDAO {
         return null;
     }
 
-    public Integer insertUser(String userid, Integer price, String productid, Integer productquantity){
+    public Integer insertUser(String userid, Integer price, Integer productid, Integer productquantity){
         String InsertQuery = "insert into cartcontains(userid,price,productid,productquantity) values(?,?,?,?)";
         Integer update = this.cartJdbc.update(InsertQuery,new Object[]{userid,price,productid,productquantity});
         return update;

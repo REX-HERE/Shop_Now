@@ -1,6 +1,6 @@
 package com.ShopNow.Models;
 
-import java.sql.Time;
+import java.sql.*;
 
 
 import lombok.AllArgsConstructor;
@@ -15,4 +15,6 @@ public class orders {
     String userid;
     Time ordertime;
     String deliverystatus;
+
+
 }
