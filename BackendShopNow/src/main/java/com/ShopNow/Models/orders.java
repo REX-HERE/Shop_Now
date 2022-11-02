@@ -15,10 +15,5 @@ public class orders {
     Time ordertime;
     String deliverystatus;
 
-    public orders(Integer orderid, String userid, Time ordertime, String deliverystatus) {
-        this.orderid = orderid;
-        this.userid = userid;
-        this.ordertime = ordertime;
-        this.deliverystatus = deliverystatus;
-    }
+
 }
