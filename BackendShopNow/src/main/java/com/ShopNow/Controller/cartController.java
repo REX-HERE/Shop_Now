@@ -13,15 +13,14 @@ public class cartController {
     cartDAO cartDao;
 
     @GetMapping("/cart/{userid}")
-    List<cartcontains> getCartByUserId(@PathVariable String userid){
+    public List<cartcontains> getCartByUserId(@PathVariable String userid){
         return cartDao.getCartData(userid);
     }
 
 
     @PostMapping("/cart")
-    String PostCart(@RequestBody cartcontains CartData){
-        System.out.println(CartData);
-        return "OK";
+    public Integer PostCart(@RequestBody cartcontains CartData){
+        return cartDao.insertUser(CartData.getUserid(), CartData.getPrice(), CartData.getProductid(), CartData.getProductquantity());
     }
 
 }
