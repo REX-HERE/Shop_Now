@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 public class cartcontains {
     String userid;
     Integer price;
-    String productid;
+    Integer productid;
     Integer productquantity;
 }

@@ -7,7 +7,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class usercontactinfo {
-    String userid;
-    String phoneno;
+
+
+public class admin {
+    String  adminid;
+    String  firstname;
+    String  lastname;
+    String  password;
 }

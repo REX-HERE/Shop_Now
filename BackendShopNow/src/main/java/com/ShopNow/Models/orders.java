@@ -1,5 +1,8 @@
 package com.ShopNow.Models;
 
+import java.sql.*;
+
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,7 +10,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class usercontactinfo {
+public class orders {
+    Integer orderid;
     String userid;
-    String phoneno;
+    Time ordertime;
+    String deliverystatus;
+
+
 }
