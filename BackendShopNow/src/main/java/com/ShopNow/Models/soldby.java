@@ -7,9 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class cartcontains {
-    String userid;
-    Integer price;
+
+public class soldby {
+    String sellerid;
     Integer productid;
-    Integer productquantity;
+    String availability;
+    Integer discount;
 }
