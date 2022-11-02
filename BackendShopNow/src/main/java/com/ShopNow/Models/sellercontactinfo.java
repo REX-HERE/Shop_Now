@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class usercontactinfo {
-    String userid;
+
+public class sellercontactinfo {
+    String sellerid;
     String phoneno;
 }

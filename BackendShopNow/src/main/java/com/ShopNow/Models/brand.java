@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class brand {
-    String productid;
+    Integer productid;
     String brandtype;
 }

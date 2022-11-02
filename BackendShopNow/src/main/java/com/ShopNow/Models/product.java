@@ -8,13 +8,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class product {
-    String productid;
+    Integer productid;
     String pname;
     Integer price;
     Integer availablequantity;
     Integer ratings;
     String imageURl;
-    Integer deleverytime;
     String verificationstatus;
-
 }
