@@ -157,8 +157,6 @@ create table admincontactinfo(
     foreign key (adminid) references admin(adminid)
 );
 
-
-
 create table soldby (
 	sellerid varchar(225),
     productid int,
@@ -167,6 +165,14 @@ create table soldby (
     primary key(sellerid , productid),
     foreign key (sellerid) references seller(sellerid),
     foreign key (productid) references product(productid)
+);
+
+create table orderinfo(
+	orderid int ,
+    productid int,
+    foreign key(orderid) references orders(orderid),
+    foreign key(productid) references product(productid),
+    primary key(orderid , productid)
 );
 
 insert into product values (1,"x", 300 , 10 , 4 , "img1" , "verified");
