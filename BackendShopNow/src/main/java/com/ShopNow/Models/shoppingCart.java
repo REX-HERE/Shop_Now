@@ -1,5 +1,4 @@
 package com.ShopNow.Models;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,10 +6,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class soldby {
-    String sellerid;
-    Integer productid;
-    String availability;
-    Integer discount;
+public class shoppingCart {
+    String userId;
+    String productId;
+    Integer productQuantity;
 }

@@ -1,4 +1,5 @@
 package com.ShopNow.Models;
+import org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,11 +9,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class product {
-    Integer productid;
-    String pname;
+    String productId;
+    String productName;
     Integer price;
-    Integer availablequantity;
+    String productDescription;
+    String brandName;
+    String categoryName;
+    Integer availableQuantity;
     Integer ratings;
-    String imageURl;
-    String verificationstatus;
+    String imageUrl;
+    String verificationStatus;
 }
