@@ -99,7 +99,7 @@ public class productDao {
         Integer exist = 0;
 
         try {
-            String existQuery = "SELECT COUNT(productId) FROM orders WHERE productId =?";
+            String existQuery = "SELECT COUNT(productId) FROM product WHERE productId =?";
             exist = productJdbc.queryForObject(existQuery, Integer.class, productId);
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -107,7 +107,7 @@ public class productDao {
 
         while (exist != 0) {
             productId = UUID.randomUUID().toString();
-            String existQuery = "SELECT COUNT(productId) FROM orders WHERE productId =?";
+            String existQuery = "SELECT COUNT(productId) FROM product WHERE productId =?";
             exist = productJdbc.queryForObject(existQuery, Integer.class, productId);
         }
 
