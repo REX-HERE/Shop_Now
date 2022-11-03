@@ -1,5 +1,6 @@
 package com.ShopNow.DAO;
 
+import com.ShopNow.Constants.constantValues;
 import com.ShopNow.Models.product;
 import com.ShopNow.Models.user;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ public class productDao {
     @Autowired
     JdbcTemplate productJdbc;
 
+
+
     public List<product> getAllProducts(){
         try{
             String query = "SELECT * FROM product";
@@ -24,6 +27,43 @@ public class productDao {
             return ans;
 
         } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+    public List<String> getAllBrands(){
+        try{
+            String query = "select Distinct brandName from product";
+            List<String> result = productJdbc.queryForList(query, String.class);
+            if(constantValues.getDebug){
+                result.forEach((i)->{
+                    System.out.println(i);
+                });
+            }
+
+            return result;
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+    public List<String> getAllCategories(){
+        try{
+            String query = "select Distinct categoryName from product";
+            List<String> result = productJdbc.queryForList(query, String.class);
+            if(constantValues.getDebug){
+                result.forEach((i)->{
+                    System.out.println(i);
+                });
+            }
+
+
+            return result;
+
+        }catch (Exception e){
             System.out.println(e.getMessage());
         }
         return null;
