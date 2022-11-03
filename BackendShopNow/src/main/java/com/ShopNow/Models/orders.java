@@ -1,20 +1,14 @@
 package com.ShopNow.Models;
-
-import java.sql.*;
-
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import java.sql.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class orders {
-    Integer orderid;
-    String userid;
-    Time ordertime;
-    String deliverystatus;
-
-
+    String orderId;
+    String userId;
+    Time orderTime;
+    String deliveryAddress;
 }
