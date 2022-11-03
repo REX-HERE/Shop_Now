@@ -23,4 +23,6 @@ public class cartController {
         return cartDao.insertUser(CartData.getUserId(), CartData.getProductId(), CartData.getProductQuantity());
     }
 
+
+
 }
