@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class cartDAO {
+public class cartDao {
 
     @Autowired
     JdbcTemplate cartJdbc;

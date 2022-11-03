@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.*;
 
 @Repository
-public class ProductDAO {
+public class productDao {
 
     @Autowired
     JdbcTemplate productJdbc;
