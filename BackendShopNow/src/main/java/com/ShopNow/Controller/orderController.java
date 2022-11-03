@@ -24,7 +24,7 @@ public class orderController {
         for (int i=0;i<1;i++){
             userId = cartData.get(i).getUserId();
         }
-        if(userId==""){
+        if(cartData.isEmpty()){
             System.out.println("cart empty");
             return 0;
         }
