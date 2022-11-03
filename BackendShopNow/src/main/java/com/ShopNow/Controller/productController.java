@@ -1,6 +1,6 @@
 package com.ShopNow.Controller;
 
-import com.ShopNow.DAO.ProductDAO;
+import com.ShopNow.DAO.productDao;
 import com.ShopNow.Models.product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,9 +13,9 @@ import java.util.*;
 @RestController
 public class productController {
     @Autowired
-    ProductDAO productDao;
+    productDao productDao;
 
-    @GetMapping("/")
+    @GetMapping("/products")
     List<product> getAllProducts(){
         return productDao.getAllProducts();
     }

@@ -1,7 +1,8 @@
 package com.ShopNow.Controller;
 
-import com.ShopNow.DAO.cartDAO;
-import com.ShopNow.Models.cartcontains;
+import com.ShopNow.DAO.cartDao;
+import com.ShopNow.Models.shoppingCart;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,17 +11,19 @@ import java.util.List;
 @RestController
 public class cartController {
     @Autowired
-    cartDAO cartDao;
+    cartDao cartDao;
 
     @GetMapping("/cart/{userid}")
-    public List<cartcontains> getCartByUserId(@PathVariable String userid){
+    public List<shoppingCart> getCartByUserId(@PathVariable String userid){
         return cartDao.getCartData(userid);
     }
 
 
     @PostMapping("/cart")
-    public Integer PostCart(@RequestBody cartcontains CartData){
-        return cartDao.insertUser(CartData.getUserid(), CartData.getPrice(), CartData.getProductid(), CartData.getProductquantity());
+    public Integer PostCart(@RequestBody shoppingCart cartData){
+        return cartDao.insertUser(cartData.getUserId(), cartData.getProductId(), cartData.getProductQuantity());
     }
+
+
 
 }
