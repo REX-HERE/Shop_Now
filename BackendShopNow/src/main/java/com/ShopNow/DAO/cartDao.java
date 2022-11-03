@@ -28,9 +28,22 @@ public class cartDao {
     }
 
     public Integer insertUser(String userId, String productId, Integer productQuantity){
-        String InsertQuery = "insert into shoppingCart(userId,productId,productQuantity) values(?,?,?,?)";
-        Integer update = this.cartJdbc.update(InsertQuery,new Object[]{userId,productId,productQuantity});
-        return update;
+        String existQuery = "SELECT COUNT(productId) FROM shoppingCart WHERE productId =?";
+        Integer exist = this.cartJdbc.queryForObject(existQuery, Integer.class, productId);
+
+//        Pending task here // Update query to be written and product info to be set as new product quantity
+        if(exist==1){
+            String insertQuery = "";
+            Integer update = this.cartJdbc.update(insertQuery,new Object[]{userId,productId,productQuantity});
+            return update;
+        }
+        else{
+            String insertQuery = "insert into shoppingCart(userId,productId,productQuantity) values(?,?,?)";
+            Integer update = this.cartJdbc.update(insertQuery,new Object[]{userId,productId,productQuantity});
+            return update;
+        }
+
+
     }
 
 }
