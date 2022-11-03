@@ -1,5 +1,6 @@
 package com.ShopNow.DAO;
 
+import com.ShopNow.Models.orderData;
 import com.ShopNow.Models.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -83,15 +84,22 @@ public class orderDao {
             System.out.println(e.getMessage());
         }
 
-
-
-
-
-
         return update.get();
     }
 
 
+    public List<orderData> getOrderDataByUserId(String userId) {
+
+        try{
+            String query="select orderId, orderTime , deliveryAddress from orders where userId = ?";
+//            result = orderJdbc.queryForObject(query, , userId);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
+        return null;
 
 
+    }
 }
