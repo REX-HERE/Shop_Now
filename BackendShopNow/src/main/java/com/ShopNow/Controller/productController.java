@@ -28,4 +28,9 @@ public class productController {
     public Integer PostCart(@RequestBody product productInfo){
         return productDao.insertProduct(productInfo);
     }
+
+    @DeleteMapping("/seller/{productId}")
+    public Integer deleteItem(@PathVariable String productId){
+        return productDao.deleteUser(productId);
+    }
 }

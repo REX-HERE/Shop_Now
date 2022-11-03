@@ -2,6 +2,7 @@ package com.ShopNow.DAO;
 
 import com.ShopNow.Constants.constantValues;
 import com.ShopNow.Models.product;
+import com.ShopNow.Models.shoppingCart;
 import com.ShopNow.Models.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -120,6 +121,19 @@ public class productDao {
             System.out.println(e.getMessage());
         }
         return null;
+    }
+
+    public Integer deleteUser(String productId){
+
+        try{
+            String deleteProduct = "delete from product where productId=?";
+            Integer update = this.productJdbc.update(deleteProduct, productId) ;
+            return update;
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return null;
+
     }
 
 }
