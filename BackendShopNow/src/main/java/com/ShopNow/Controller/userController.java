@@ -12,6 +12,7 @@ public class userController {
     @Autowired
     userDao userDao;
 
+
     @GetMapping("/user/{id}")
     user getUserById(@PathVariable String id){
         return userDao.getUser(id);
