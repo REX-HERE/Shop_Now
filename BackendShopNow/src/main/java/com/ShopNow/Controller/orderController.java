@@ -19,15 +19,14 @@ public class orderController {
 
     @PostMapping("/order")
     public Integer postOrder(@RequestBody List<shoppingCart> cartData){
-        String userId = "";
-        List<String> productIdList = new ArrayList<>();
-        for (int i=0;i<1;i++){
-            userId = cartData.get(i).getUserId();
-        }
         if(cartData.isEmpty()){
             System.out.println("cart empty");
             return 0;
         }
+        String userId = "";
+        List<String> productIdList = new ArrayList<>();
+        userId = cartData.get(0).getUserId();
+
 
         cartData.forEach((tuple)->{
             productIdList.add(tuple.getProductId());
