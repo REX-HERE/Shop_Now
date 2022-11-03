@@ -31,7 +31,7 @@ public class ProductDAO {
 
     public product getProductById(Integer id){
         try {
-            String query = "Select * from product where productid=?";
+            String query = "Select * from product where productId=?";
 
             product result = productJdbc.queryForObject(query, new BeanPropertyRowMapper<>(product.class), id);
             return result;

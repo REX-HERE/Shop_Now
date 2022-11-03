@@ -1,6 +1,6 @@
 package com.ShopNow.DAO;
 
-import com.ShopNow.Models.cartcontains;
+import com.ShopNow.Models.shoppingCart;
 import com.ShopNow.Models.product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -15,10 +15,10 @@ public class cartDAO {
     @Autowired
     JdbcTemplate cartJdbc;
 
-    public List<cartcontains> getCartData(String userid){
+    public List<shoppingCart> getCartData(String userId){
         try{
-            String query = "select * from cartcontains where userid=?";
-            List<cartcontains> ans = cartJdbc.query(query, new BeanPropertyRowMapper<>(cartcontains.class), userid);
+            String query = "select * from shoppingCart where userId=?";
+            List<shoppingCart> ans = cartJdbc.query(query, new BeanPropertyRowMapper<>(shoppingCart.class), userId);
             return ans;
 
         } catch (Exception e){
@@ -27,9 +27,9 @@ public class cartDAO {
         return null;
     }
 
-    public Integer insertUser(String userid, Integer price, Integer productid, Integer productquantity){
-        String InsertQuery = "insert into cartcontains(userid,price,productid,productquantity) values(?,?,?,?)";
-        Integer update = this.cartJdbc.update(InsertQuery,new Object[]{userid,price,productid,productquantity});
+    public Integer insertUser(String userId, String productId, Integer productQuantity){
+        String InsertQuery = "insert into shoppingCart(userId,productId,productQuantity) values(?,?,?,?)";
+        Integer update = this.cartJdbc.update(InsertQuery,new Object[]{userId,productId,productQuantity});
         return update;
     }
 
