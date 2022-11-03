@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.SqlOutParameter;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 import java.util.*;
@@ -77,6 +78,45 @@ public class productDao {
             return result;
 
         } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+    public Integer insertProduct(product productInfo) {
+
+        String productName = productInfo.getProductName();
+        Integer price = productInfo.getPrice();
+        String productDescription = productInfo.getProductDescription();
+        String brandName = productInfo.getBrandName();
+        String categoryName = productInfo.getCategoryName();
+        Integer availableQuantity = productInfo.getAvailableQuantity();
+        Integer ratings = productInfo.getRatings();
+        String imageUrl = productInfo.getImageUrl();
+        String verificationStatus = productInfo.getVerificationStatus();
+
+        String productId = UUID.randomUUID().toString();
+        Integer exist = 0;
+
+        try {
+            String existQuery = "SELECT COUNT(productId) FROM orders WHERE productId =?";
+            exist = productJdbc.queryForObject(existQuery, Integer.class, productId);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        while (exist != 0) {
+            productId = UUID.randomUUID().toString();
+            String existQuery = "SELECT COUNT(productId) FROM orders WHERE productId =?";
+            exist = productJdbc.queryForObject(existQuery, Integer.class, productId);
+        }
+
+        try {
+            String insertQuery = "insert into product(productId,productName,price,productDescription,brandName,categoryName,availableQuantity,ratings,imageUrl,verificationStatus) values(?,?,?,?,?,?,?,?,?,?)";
+            String finalProductId = productId;
+            Integer update = this.productJdbc.update(insertQuery, new Object[]{finalProductId, productName, price, productDescription, brandName, categoryName, availableQuantity, ratings, imageUrl, verificationStatus});
+            return update;
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return null;

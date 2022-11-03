@@ -2,10 +2,9 @@ package com.ShopNow.Controller;
 
 import com.ShopNow.DAO.productDao;
 import com.ShopNow.Models.product;
+import com.ShopNow.Models.shoppingCart;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.*;
@@ -25,4 +24,8 @@ public class productController {
         return productDao.getProductById(id);
     }
 
+    @PostMapping("/seller")
+    public Integer PostCart(@RequestBody product productInfo){
+        return productDao.insertProduct(productInfo);
+    }
 }
