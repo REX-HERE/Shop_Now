@@ -6,5 +6,5 @@ import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 public class constantValues {
-    public static boolean getDebug = false;
+    public static boolean getDebug = true;
 }
