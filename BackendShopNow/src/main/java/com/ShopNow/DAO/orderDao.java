@@ -1,14 +1,15 @@
 package com.ShopNow.DAO;
 
+import com.ShopNow.Constants.constantValues;
 import com.ShopNow.Models.orderData;
+import com.ShopNow.Models.orderDataSemi;
 import com.ShopNow.Models.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
 @Repository
@@ -18,6 +19,11 @@ public class orderDao {
     JdbcTemplate orderJdbc;
     @Autowired
     user userData;
+    @Autowired
+    orderData orderData;
+
+    @Autowired
+    orderDataSemi orderDataSemi;
 
     public Integer insertOrder(List<String> productIdList, String userId){
         AtomicReference<Integer> update = new AtomicReference<>(0);
@@ -83,23 +89,58 @@ public class orderDao {
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
-
         return update.get();
     }
 
 
     public List<orderData> getOrderDataByUserId(String userId) {
-
+        List<orderData> ans = new LinkedList<>();
+        List<orderDataSemi> result = new LinkedList<>();
         try{
-            String query="select orderId, orderTime , deliveryAddress from orders where userId = ?";
-//            result = orderJdbc.queryForObject(query, , userId);
+            String semiQuery="select orderId, orderTime , deliveryAddress from orders where userId = ?";
+            result = orderJdbc.query(semiQuery, new BeanPropertyRowMapper<>(orderDataSemi.class), userId);
+            if(constantValues.getDebug) {
+                System.out.println(result);
+            }
+            result.forEach((index)->{
+
+                if(constantValues.getDebug){
+                    System.out.println(index);
+                }
+
+                String query = "select productId from orderInfo where orderId=?";
+                List<String> productIds = orderJdbc.queryForList(query, String.class,index.getOrderId().toString());
+
+                if(constantValues.getDebug){
+                    productIds.forEach((productid)->{
+                        System.out.println(productid);
+                    });
+                }
+
+                orderData orderDataObj = new orderData();
+
+                orderDataObj.setOrderId(index.getOrderId());
+                orderDataObj.setOrderTime(index.getOrderTime());
+                orderDataObj.setOrderAddress(index.getDeliveryAddress());
+                orderDataObj.setProductIdList(productIds);
+
+                if(constantValues.getDebug){
+                    System.out.println(orderDataObj);
+                }
+
+                ans.add(orderDataObj);
+                System.out.println("debugged data -- ");
+                System.out.println(ans);
+
+            });
+            if(constantValues.getDebug){
+                System.out.println(ans);
+            }
+            return ans;
         }
         catch (Exception e){
             System.out.println(e.getMessage());
         }
-
         return null;
-
-
     }
 }
