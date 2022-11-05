@@ -9,12 +9,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class homeController {
 
     @Autowired
@@ -34,16 +36,19 @@ public class homeController {
 //    homeData homeData;
 
     @GetMapping("/")
-    public homeData getHomeData(){
+    public String getHomeData(Model model){
         try{
             homeData.setProducts(productDao.getAllProducts());
             homeData.setBrands(productDao.getAllBrands());
             homeData.setCategories(productDao.getAllCategories());
-            return homeData;
+//            return homeData;
+            model.addAttribute("homeData",homeData);
+            return "home";
 
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
+
         return null;
     }
 
