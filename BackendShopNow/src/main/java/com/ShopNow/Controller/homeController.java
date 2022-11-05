@@ -34,7 +34,7 @@ public class homeController {
 //    homeData homeData;
 
     @GetMapping("/")
-    homeData getHomeData(){
+    public homeData getHomeData(){
         try{
             homeData.setProducts(productDao.getAllProducts());
             homeData.setBrands(productDao.getAllBrands());
