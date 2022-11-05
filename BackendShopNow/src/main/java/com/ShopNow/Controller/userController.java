@@ -28,4 +28,8 @@ public class userController {
         return userDao.insertUser(userDetail);
     }
 
+    @DeleteMapping("/user/{userId}")
+    public Integer deleteItem(@PathVariable String userId){
+        return userDao.deleteUser(userId);
+    }
 }

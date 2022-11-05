@@ -121,7 +121,7 @@ public class productDao {
         return null;
     }
 
-    public Integer deleteUser(String productId){
+    public Integer deleteProduct(String productId){
 
         try{
             String deleteProduct = "delete from product where productId=?";

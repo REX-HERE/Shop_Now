@@ -74,5 +74,18 @@ public class userDao {
         return null;
     }
 
+    public Integer deleteUser(String userId){
+
+        try{
+            String deleteUser = "delete from user where userId=?";
+            Integer update = this.userJdbc.update(deleteUser, userId) ;
+            return update;
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return null;
+
+    }
+
 
 }

@@ -32,7 +32,7 @@ public class productController {
 
     @DeleteMapping("/seller/{productId}")
     public Integer deleteItem(@PathVariable String productId){
-        return productDao.deleteUser(productId);
+        return productDao.deleteProduct(productId);
     }
 
     @GetMapping("/soldBy/{userId}")
