@@ -2,6 +2,7 @@ package com.ShopNow.Controller;
 
 import com.ShopNow.DAO.productDao;
 import com.ShopNow.Models.product;
+import com.ShopNow.Models.productData;
 import com.ShopNow.Models.shoppingCart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -31,6 +32,11 @@ public class productController {
 
     @DeleteMapping("/seller/{productId}")
     public Integer deleteItem(@PathVariable String productId){
-        return productDao.deleteUser(productId);
+        return productDao.deleteProduct(productId);
+    }
+
+    @GetMapping("/soldBy/{userId}")
+    List<productData> getProductDataByUserId(@PathVariable String userId){
+        return productDao.getProductDataByUserId(userId);
     }
 }
