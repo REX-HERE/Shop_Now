@@ -14,9 +14,9 @@ import lombok.NoArgsConstructor;
 @Component
 public class orderData {
     private String orderId;
-    private String orderAddress;
     private Time OrderTime;
-    private List<String> productIdList;
+    private String orderAddress;
+    private List<product> productIdList;
 
 
 }

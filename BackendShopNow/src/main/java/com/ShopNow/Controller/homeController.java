@@ -24,16 +24,6 @@ public class homeController {
     @Autowired
     homeData homeData;
 
-//    @Data
-//    @AllArgsConstructor
-//    @NoArgsConstructor
-//    public class homeData {
-//        List<product> products;
-//        List<String> brands;
-//        List<String> categories;
-//    }
-//    @Autowired
-//    homeData homeData;
 
     @GetMapping("/")
     public homeData getHomeData(){
