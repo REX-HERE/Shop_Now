@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
+@RestController
 public class homeController {
 
     @Autowired
@@ -36,18 +36,19 @@ public class homeController {
 //    homeData homeData;
 
     @GetMapping("/")
-    public String getHomeData(Model model){
+    public homeData getHomeData(){
         try{
             homeData.setProducts(productDao.getAllProducts());
             homeData.setBrands(productDao.getAllBrands());
             homeData.setCategories(productDao.getAllCategories());
-//            return homeData;
-            model.addAttribute("homeData",homeData);
-            return "index";
+            return homeData;
+//            model.addAttribute("homeData",homeData);
+//            return "index";
 
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
+
         return null;
     }
 
