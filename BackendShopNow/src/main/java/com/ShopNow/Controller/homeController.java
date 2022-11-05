@@ -24,7 +24,6 @@ public class homeController {
     @Autowired
     homeData homeData;
 
-
     @GetMapping("/")
     public homeData getHomeData(){
         try{

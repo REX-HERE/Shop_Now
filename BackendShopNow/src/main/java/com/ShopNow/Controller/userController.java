@@ -23,6 +23,7 @@ public class userController {
     List<user> getAllUser(){
         return userDao.getAllUser();
     }
+
     @PostMapping("/user")
     public Integer postUser(@RequestBody user userDetail){
         return userDao.insertUser(userDetail);

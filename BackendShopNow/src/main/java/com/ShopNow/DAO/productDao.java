@@ -131,7 +131,6 @@ public class productDao {
             System.out.println(e.getMessage());
         }
         return null;
-
     }
 
     public List<productData> getProductDataByUserId(String userId) {

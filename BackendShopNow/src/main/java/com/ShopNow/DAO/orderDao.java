@@ -66,7 +66,6 @@ public class orderDao {
             System.out.println(e.getMessage());
         }
 
-
         //part2 insert into orderinfo
 
         String finalOrderId1 = orderId;

@@ -16,7 +16,6 @@ public class userDao {
     @Autowired
     JdbcTemplate userJdbc;
 
-
     public user getUser(String userId){
         try{
             String query = "select * from user where userId=?";

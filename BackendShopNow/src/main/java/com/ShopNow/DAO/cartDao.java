@@ -65,7 +65,6 @@ public class cartDao {
         }
         return null;
 
-
     }
     public Integer deleteProduct(shoppingCart cartData){
         String userId = cartData.getUserId();
