@@ -43,7 +43,7 @@ public class homeController {
             homeData.setCategories(productDao.getAllCategories());
 //            return homeData;
             model.addAttribute("homeData",homeData);
-            return "home";
+            return "index";
 
         }catch (Exception e){
             System.out.println(e.getMessage());
