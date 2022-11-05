@@ -13,10 +13,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Component
 public class orderData {
-    String orderId;
-    String orderAddress;
-    Time OrderTime;
-    List<Integer> productIdList;
+    private String orderId;
+    private String orderAddress;
+    private Time OrderTime;
+    private List<String> productIdList;
 
 
 }

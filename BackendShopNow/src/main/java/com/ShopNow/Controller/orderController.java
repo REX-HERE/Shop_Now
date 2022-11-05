@@ -34,6 +34,7 @@ public class orderController {
         return orderDao.insertOrder(productIdList, userId);
     }
 
+
     @GetMapping("/order/{userId}")
     List<orderData> getOrderData(@PathVariable String userId){
         return orderDao.getOrderDataByUserId(userId);

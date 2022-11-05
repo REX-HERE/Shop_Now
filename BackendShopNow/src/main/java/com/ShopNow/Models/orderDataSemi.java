@@ -12,7 +12,7 @@ import java.sql.*;
 @NoArgsConstructor
 @Component
 public class orderDataSemi {
-    String orderId;
-    Time orderTime;
-    String deliveryAddress;
+    private String orderId;
+    private Time orderTime;
+    private String deliveryAddress;
 }
