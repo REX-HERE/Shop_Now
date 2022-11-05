@@ -1,9 +1,7 @@
 package com.ShopNow.DAO;
 
 import com.ShopNow.Constants.constantValues;
-import com.ShopNow.Models.product;
-import com.ShopNow.Models.shoppingCart;
-import com.ShopNow.Models.user;
+import com.ShopNow.Models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -134,6 +132,19 @@ public class productDao {
         }
         return null;
 
+    }
+
+    public List<productData> getProductDataByUserId(String userId) {
+        List<productData> ans = new LinkedList<>();
+        try {
+            String queryData = "select s.productId, s.discount ,p.productName, p.price, p.productDescription,p.brandName, p.categoryName, p.availableQuantity ,p.ratings, p.imageUrl, p.verificationStatus from soldBy as s,product as p where s.userId = ? and s.productId = p.productId";
+            ans = productJdbc.query(queryData, new BeanPropertyRowMapper<>(productData.class), userId);
+            return ans;
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 
 }
