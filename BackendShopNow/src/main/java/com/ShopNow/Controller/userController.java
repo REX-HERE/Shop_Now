@@ -1,11 +1,12 @@
 package com.ShopNow.Controller;
 
 import com.ShopNow.DAO.userDao;
+import com.ShopNow.Models.product;
 import com.ShopNow.Models.user;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class userController {
@@ -19,4 +20,25 @@ public class userController {
     }
 
 
+    @GetMapping("/user")
+    user login(@RequestBody String userId, @RequestBody String userType, @RequestBody String userPassword){
+        return userDao.login(userId, userType, userPassword);
+    }
+
+
+
+    @GetMapping("/allUsers")
+    List<user> getAllUser(){
+        return userDao.getAllUser();
+    }
+
+    @PostMapping("/user")
+    public Integer postUser(@RequestBody user userDetail){
+        return userDao.insertUser(userDetail);
+    }
+
+    @DeleteMapping("/user/{userId}")
+    public Integer deleteItem(@PathVariable String userId){
+        return userDao.deleteUser(userId);
+    }
 }

@@ -27,7 +27,6 @@ public class orderController {
         List<String> productIdList = new ArrayList<>();
         userId = cartData.get(0).getUserId();
 
-
         cartData.forEach((tuple)->{
             productIdList.add(tuple.getProductId());
         });

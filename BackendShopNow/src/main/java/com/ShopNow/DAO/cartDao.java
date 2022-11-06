@@ -65,15 +65,14 @@ public class cartDao {
         }
         return null;
 
-
     }
-    public Integer deleteUser(shoppingCart cartData){
+    public Integer deleteProduct(shoppingCart cartData){
         String userId = cartData.getUserId();
         String productId = cartData.getProductId();
 
         try{
-            String deleteCartItem = "delete from shoppingCart where productId=?";
-            Integer update = this.cartJdbc.update(deleteCartItem, productId) ;
+            String deleteCartItem = "delete from shoppingCart where productId=? and userId=?";
+            Integer update = this.cartJdbc.update(deleteCartItem, productId, userId) ;
             return update;
         }catch (Exception e){
             System.out.println(e.getMessage());

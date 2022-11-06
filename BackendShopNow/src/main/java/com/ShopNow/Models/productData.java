@@ -1,16 +1,18 @@
 package com.ShopNow.Models;
-import org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
 
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class product {
+@Component
+public class productData {
     String productId;
+    Integer discount;
     String productName;
     Integer price;
     String productDescription;
