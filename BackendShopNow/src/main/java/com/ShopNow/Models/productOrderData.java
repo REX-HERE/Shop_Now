@@ -4,11 +4,13 @@ import org.springframework.boot.autoconfigure.integration.IntegrationAutoConfigu
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
 
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Component
 public class productOrderData {
     String productId;
     String productName;
@@ -20,5 +22,5 @@ public class productOrderData {
     Integer ratings;
     String imageUrl;
     String verificationStatus;
-    Integer Quantity;
+    Integer productQuantity;
 }
