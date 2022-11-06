@@ -10,4 +10,5 @@ import lombok.NoArgsConstructor;
 public class orderInfo {
     String orderId;
     String productId;
+    Integer productQuantity;
 }

@@ -1,10 +1,7 @@
 package com.ShopNow.DAO;
 
 import com.ShopNow.Constants.constantValues;
-import com.ShopNow.Models.orderData;
-import com.ShopNow.Models.orderDataSemi;
-import com.ShopNow.Models.product;
-import com.ShopNow.Models.user;
+import com.ShopNow.Models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -108,9 +105,10 @@ public class orderDao {
                     System.out.println(index);
                 }
 
-                String query = "select p.productId, p.productName, p.price, p.productDescription, p.brandName, p.categoryName, p.availableQuantity, p.ratings, p.imageUrl, p.verificationStatus \n" +
-                        "from product as p, orderInfo as o where p.productId=o.productId and o.orderId=?";
-                List<product> products = orderJdbc.query(query, new BeanPropertyRowMapper<>(product.class),index.getOrderId().toString());
+                String query = "select p.productId, p.productName, p.price, p.productDescription, p.brandName, p.categoryName, p.availableQuantity, p.ratings, p.imageUrl, p.verificationStatus, s.productQuantity" +
+                "from product as p, orderInfo as o, shoppingCart as s where p.productId=o.productId and o.orderId=? and s.productId = p.productId";
+                ;
+                List<productOrderData> products = orderJdbc.query(query, new BeanPropertyRowMapper<>(productOrderData.class),index.getOrderId().toString());
 
                 if(constantValues.getDebug){
                     products.forEach((product)->{
@@ -123,7 +121,7 @@ public class orderDao {
                 orderDataObj.setOrderId(index.getOrderId());
                 orderDataObj.setOrderTime(index.getOrderTime());
                 orderDataObj.setOrderAddress(index.getDeliveryAddress());
-                orderDataObj.setProductIdList(products);
+                orderDataObj.setProductDataList(products);
 
                 if(constantValues.getDebug){
                     System.out.println(orderDataObj);

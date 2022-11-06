@@ -121,6 +121,7 @@ insert into orders (orderId,userId,deliveryAddress) values ("6","9","Delhi");
 create table orderInfo(
 	orderId varchar(255),
     productId varchar(255),
+  	productQuantity int,
     foreign key(orderId) references orders(orderId) on delete cascade,
     foreign key(productId) references product(productId) on delete cascade,
     primary key(orderId , productId)
@@ -162,11 +163,12 @@ insert into product values("19","Sweat Shirt",700,"The Modern Soul Men's Printed
 insert into product values("20","Women Shoes",600,"Running Shoes, Rubber Sole, Closure Lace Up, Fit type Regular, pink color","Campus","Footwear",50,4,"https://res.cloudinary.com/dxo3abzy2/image/upload/v1667664617/DBMS2/Women_Footwear_nemlpc.jpg","verified");
 
 
-# select * from product;
+select * from product;
 
-# select p.productId, p.productName, p.price, p.productDescription, p.brandName, p.categoryName, p.availableQuantity, p.ratings, p.imageUrl, p.verificationStatus
-# from product as p, orderInfo as o where p.productId=o.productId and o.orderId="064683b3-5f8e-4864-b08a-917ab61a62db";
+select p.productId, p.productName, p.price, p.productDescription, p.brandName, p.categoryName, p.availableQuantity, p.ratings, p.imageUrl, p.verificationStatus, s.productQuantity
+from product as p, orderInfo as o, shoppingCart as s where p.productId=o.productId and o.orderId="3" and s.productId = p.productId;
 
+insert into orderInfo values("3","1");
 
-
-
+select * from shoppingCart;
+insert into shoppingCart values("5","1","6");
