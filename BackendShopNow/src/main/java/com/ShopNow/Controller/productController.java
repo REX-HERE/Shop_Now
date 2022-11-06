@@ -38,5 +38,6 @@ public class productController {
     @GetMapping("/soldBy/{userId}")
     List<productData> getProductDataByUserId(@PathVariable String userId){
         return productDao.getProductDataByUserId(userId);
+
     }
 }

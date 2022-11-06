@@ -1,0 +1,312 @@
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ShopNow</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{css/style.css}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous"><!-- fontawesom cdn link -->
+    <link href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <!-- font -->
+</head>
+
+<body>
+
+
+
+    <hr>
+    <div class="container" style="height: 30px;">
+        <nav class="navbar navbar-expand-lg navbar-light" style="height: 30px;">
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse pl-4" id="navbarNav">
+                <ul class="navbar-nav">
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> <span> ≡ All Category</span></a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Foods and Drink</a>
+                            <a class="dropdown-item" href="#">Home interior</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Category 1</a>
+                            <a class="dropdown-item" href="#">Category 2</a>
+                            <a class="dropdown-item" href="#">Category 3</a>
+                        </div>
+                    </li> -->
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Fashion <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"> Supermarket </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Electronics</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Baby & Toys</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Fitness sport </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Clothing</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Furnitures</a>
+                    </li>
+                </ul>
+            </div>
+            </nav>
+            
+        </div>
+    </hr>
+
+
+<br> <br>
+
+<div class="container cardItem" id="products">
+    <h2>Brand Name</h2>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top img-fluid" src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text"><a href="inner-productpage.html" class="text-dark">Just another item name</a></p>
+
+                    <div class="ratings">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        
+                    </div>
+                    <p class="card-cost">$179.00</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top img-fluid" src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/2.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text"><a href="inner-productpage.html" class="text-dark">Some item name here</a></p>
+                    <div class="ratings">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        
+                    </div>
+                    <p class="card-cost">$280.00</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top img-fluid" src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/3.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text"><a href="inner-productpage.html" class="text-dark">Great item name here</a></p>
+                    <div class="ratings">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        
+                    </div>
+                    <p class="card-cost">$56.00</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top img-fluid" src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/4.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text"><a href="inner-productpage.html" class="text-dark">Just another item name</a></p>
+                    <div class="ratings">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        
+                    </div>
+                    <p class="card-cost">$179.00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container cardItem" id="products">
+    <!-- <h2>Brand Name</h2> -->
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top img-fluid" src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text"><a href="inner-productpage.html" class="text-dark">Just another item name</a></p>
+
+                    <div class="ratings">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        
+                    </div>
+                    <p class="card-cost">$179.00</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top img-fluid" src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/2.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text"><a href="inner-productpage.html" class="text-dark">Some item name here</a></p>
+                    <div class="ratings">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        
+                    </div>
+                    <p class="card-cost">$280.00</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top img-fluid" src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/3.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text"><a href="inner-productpage.html" class="text-dark">Great item name here</a></p>
+                    <div class="ratings">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        
+                    </div>
+                    <p class="card-cost">$56.00</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top img-fluid" src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/4.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text"><a href="inner-productpage.html" class="text-dark">Just another item name</a></p>
+                    <div class="ratings">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        
+                    </div>
+                    <p class="card-cost">$179.00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container cardItem" id="products">
+    <!-- <h2>Brand Name</h2> -->
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top img-fluid" src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text"><a href="inner-productpage.html" class="text-dark">Just another item name</a></p>
+
+                    <div class="ratings">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        
+                    </div>
+                    <p class="card-cost">$179.00</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top img-fluid" src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/2.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text"><a href="inner-productpage.html" class="text-dark">Some item name here</a></p>
+                    <div class="ratings">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        
+                    </div>
+                    <p class="card-cost">$280.00</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top img-fluid" src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/3.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text"><a href="inner-productpage.html" class="text-dark">Great item name here</a></p>
+                    <div class="ratings">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        
+                    </div>
+                    <p class="card-cost">$56.00</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top img-fluid" src="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/4.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text"><a href="inner-productpage.html" class="text-dark">Just another item name</a></p>
+                    <div class="ratings">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-secondary"></i>
+                        
+                    </div>
+                    <p class="card-cost">$179.00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container cardItem" id="recommend">
+    <!-- <div id="heading"> <h2>Related</h2> -->
+        <button type="button" class="btn btn-outline-primary" id="float">See all</button> </div>
+    <br>
+    
+</body>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+
+</html>

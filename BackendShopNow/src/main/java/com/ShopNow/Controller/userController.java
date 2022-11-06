@@ -19,10 +19,19 @@ public class userController {
         return userDao.getUser(id);
     }
 
+
     @GetMapping("/user")
+    user login(@RequestBody String userId, @RequestBody String userType, @RequestBody String userPassword){
+        return userDao.login(userId, userType, userPassword);
+    }
+
+
+
+    @GetMapping("/allUsers")
     List<user> getAllUser(){
         return userDao.getAllUser();
     }
+
     @PostMapping("/user")
     public Integer postUser(@RequestBody user userDetail){
         return userDao.insertUser(userDetail);

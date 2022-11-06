@@ -18,18 +18,13 @@ public class cartController {
         return cartDao.getCartData(userid);
     }
 
-
     @PostMapping("/cart")
     public Integer PostCart(@RequestBody shoppingCart cartData){
         return cartDao.insertUser(cartData.getUserId(), cartData.getProductId(), cartData.getProductQuantity());
     }
-    @DeleteMapping("/cart")
+    @DeleteMapping("/cart/product")
     public Integer deleteItem(@RequestBody shoppingCart cartData){
-        return cartDao.deleteUser(cartData);
+        return cartDao.deleteProduct(cartData);
     }
-
-
-
-
 
 }

@@ -16,13 +16,23 @@ public class userDao {
     @Autowired
     JdbcTemplate userJdbc;
 
-
     public user getUser(String userId){
         try{
             String query = "select * from user where userId=?";
             user result = userJdbc.queryForObject(query, new BeanPropertyRowMapper<>(user.class), userId);
             return result;
 
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+
+    public user login(String userId, String userType, String userPassword) {
+        try{
+            String query = "select * from user where userId=? and type=? and password=?";
+            user result = userJdbc.queryForObject(query, new BeanPropertyRowMapper<>(user.class), userId, userType, userPassword);
         } catch (Exception e){
             System.out.println(e.getMessage());
         }
@@ -47,21 +57,21 @@ public class userDao {
         String type = userDetail.getType();
         String password = userDetail.getPassword();
         String address = userDetail.getAddress();
-        String userId = UUID.randomUUID().toString();
+        String userId = userDetail.getUserId();
         Integer exist = 0;
 
-        try {
-            String existQuery = "SELECT COUNT(userId) FROM user WHERE userId =?";
-            exist = userJdbc.queryForObject(existQuery, Integer.class, userId);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-
-        while (exist != 0) {
-            userId = UUID.randomUUID().toString();
-            String existQuery = "SELECT COUNT(userId) FROM user WHERE userId =?";
-            exist = userJdbc.queryForObject(existQuery, Integer.class, userId);
-        }
+//        try {
+//            String existQuery = "SELECT COUNT(userId) FROM user WHERE userId =?";
+//            exist = userJdbc.queryForObject(existQuery, Integer.class, userId);
+//        } catch (Exception e) {
+//            System.out.println(e.getMessage());
+//        }
+//
+//        while (exist != 0) {
+//            userId = UUID.randomUUID().toString();
+//            String existQuery = "SELECT COUNT(userId) FROM user WHERE userId =?";
+//            exist = userJdbc.queryForObject(existQuery, Integer.class, userId);
+//        }
 
         try {
             String insertQuery = "insert into user(userId,firstName,lastName,type,password,address) values(?,?,?,?,?,?)";
@@ -71,7 +81,7 @@ public class userDao {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return null;
+        return exist;
     }
 
     public Integer deleteUser(String userId){
