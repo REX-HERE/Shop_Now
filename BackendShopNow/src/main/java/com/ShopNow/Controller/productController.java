@@ -25,17 +25,17 @@ public class productController {
         return productDao.getProductById(id);
     }
 
-    @PostMapping("/seller")
+    @PostMapping("/seller/addProduct")
     public Integer PostCart(@RequestBody product productInfo){
         return productDao.insertProduct(productInfo);
     }
 
-    @DeleteMapping("/seller/{productId}")
+    @DeleteMapping("/seller/deleteProduct/{productId}")
     public Integer deleteItem(@PathVariable String productId){
         return productDao.deleteProduct(productId);
     }
 
-    @GetMapping("/soldBy/{userId}")
+    @GetMapping("/seller/products/{userId}")
     List<productData> getProductDataByUserId(@PathVariable String userId){
         return productDao.getProductDataByUserId(userId);
 

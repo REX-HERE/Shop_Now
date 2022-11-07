@@ -20,7 +20,7 @@ public class userController {
     }
 
 
-    @GetMapping("/user")
+    @GetMapping("/user/login")
     user login(@RequestBody String userId, @RequestBody String userType, @RequestBody String userPassword){
         return userDao.login(userId, userType, userPassword);
     }
@@ -32,12 +32,12 @@ public class userController {
         return userDao.getAllUser();
     }
 
-    @PostMapping("/user")
+    @PostMapping("/user/signUp")
     public Integer postUser(@RequestBody user userDetail){
         return userDao.insertUser(userDetail);
     }
 
-    @DeleteMapping("/user/{userId}")
+    @DeleteMapping("/user/delete/{userId}")
     public Integer deleteItem(@PathVariable String userId){
         return userDao.deleteUser(userId);
     }
