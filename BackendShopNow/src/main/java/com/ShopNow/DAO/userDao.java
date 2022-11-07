@@ -33,6 +33,7 @@ public class userDao {
         try{
             String query = "select * from user where userId=? and type=? and password=?";
             user result = userJdbc.queryForObject(query, new BeanPropertyRowMapper<>(user.class), userId, userType, userPassword);
+            return result;
         } catch (Exception e){
             System.out.println(e.getMessage());
         }

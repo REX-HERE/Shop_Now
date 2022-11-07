@@ -15,7 +15,7 @@ public class productController {
     @Autowired
     productDao productDao;
 
-    @GetMapping("/products")
+    @GetMapping("/allProducts")
     List<product> getAllProducts(){
         return productDao.getAllProducts();
     }

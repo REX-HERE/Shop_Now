@@ -1,18 +1,23 @@
 package com.ShopNow.Controller;
 
+import com.ShopNow.Constants.constantValues;
 import com.ShopNow.DAO.userDao;
 import com.ShopNow.Models.product;
 import com.ShopNow.Models.user;
+import com.ShopNow.Models.userTempData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin(value = "http://localhost:3000")
 public class userController {
     @Autowired
     userDao userDao;
 
+    @Autowired
+    userTempData userTempData;
 
     @GetMapping("/user/{id}")
     user getUserById(@PathVariable String id){
@@ -20,9 +25,12 @@ public class userController {
     }
 
 
-    @GetMapping("/user/login")
-    user login(@RequestBody String userId, @RequestBody String userType, @RequestBody String userPassword){
-        return userDao.login(userId, userType, userPassword);
+    @PostMapping("/user/login")
+    user login(@RequestBody userTempData data){
+        if(constantValues.getDebug){
+            System.out.println(data);
+        }
+        return userDao.login(data.getUserId(), data.getType(), data.getPassword());
     }
 
 
