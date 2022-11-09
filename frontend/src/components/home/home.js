@@ -1,16 +1,18 @@
 import React from "react";
 import axios from 'axios'
+import { getHome } from "../../api/api";
 
-const home = () => {
+const Home = () => {
   const [brands, setBrands] = React.useState([]);
 
   React.useEffect(() => {
-    axios.get('http://localhost:8080/home').then((res) => {
-      setBrands(res.data);
+    axios.get('http://localhost:8080/').then((res) => {
+      setBrands(res.data.products);
       console.log(brands);
     })
-  });
+  },[]);
 
+  getHome({user_id:"harsh",user_type:"customer",password:"Harsh123"})
 
   return (
     <div>
@@ -19,7 +21,7 @@ const home = () => {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>ShopNow</title>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossOrigin="anonymous" />
-      <link rel="stylesheet" href="css/style.css" />
+      <link rel="stylesheet" href="../ui/css/style.css" />
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossOrigin="anonymous" />{/* fontawesom cdn link */}
       <link href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
       {/* font */}
@@ -31,12 +33,13 @@ const home = () => {
           </button>
           <div className="collapse navbar-collapse pl-4" id="navbarNav">
             <ul className="navbar-nav">
-            {brands.map((brand) => {
-                <li key={brand.id}>
-                  {brand.name}
+            {
+              brands.map((product)=>(
+                <li>
+                  {product.brandName}
                 </li>
-              }
-              )}
+              ))
+            }
               <li className="nav-item active">
                 <a className="nav-link" href="#">Furnitures</a>
               </li>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const cart = () => {
+const Cart = () => {
 return (
     <div>
         <meta charSet="utf-8" />
@@ -125,4 +125,4 @@ return (
 
 }
 
-export default cart
+export default Cart

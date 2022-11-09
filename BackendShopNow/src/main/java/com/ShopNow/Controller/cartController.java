@@ -22,7 +22,7 @@ public class cartController {
     public Integer PostCart(@RequestBody shoppingCart cartData){
         return cartDao.insertUser(cartData.getUserId(), cartData.getProductId(), cartData.getProductQuantity());
     }
-    @DeleteMapping("/cart/product")
+    @DeleteMapping("/cart/deleteProduct")
     public Integer deleteItem(@RequestBody shoppingCart cartData){
         return cartDao.deleteProduct(cartData);
     }

@@ -165,8 +165,9 @@ insert into product values("20","Women Shoes",600,"Running Shoes, Rubber Sole, C
 
 select * from product;
 
-select p.productId, p.productName, p.price, p.productDescription, p.brandName, p.categoryName, p.availableQuantity, p.ratings, p.imageUrl, p.verificationStatus, s.productQuantity
-from product as p, orderInfo as o, shoppingCart as s where p.productId=o.productId and o.orderId="3" and s.productId = p.productId;
+select p.productId, p.productName, p.price, p.productDescription, p.brandName, p.categoryName, p.availableQuantity, p.ratings, p.imageUrl, p.verificationStatus, o.productQuantity
+                from product as p, orderInfo as o where p.productId=o.productId and o.orderId="07fc83fe-c663-4ba9-b218-8e6ffdc7f038";
+
 
 insert into orderInfo values("3","1");
 

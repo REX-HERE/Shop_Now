@@ -1,6 +1,6 @@
 import React from 'react'
 
-const signUp = () => {
+const SignUp = () => {
     return (
         <div>
           <meta charSet="utf-8" />
@@ -52,4 +52,4 @@ const signUp = () => {
       );
 }
 
-export default signUp
+export default SignUp

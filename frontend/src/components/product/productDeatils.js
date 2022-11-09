@@ -1,6 +1,6 @@
 import React from 'react'
 
-const productDeatils = () => {
+const ProductDeatils = () => {
     return (
         <div>
           <meta charSet="utf-8" />
@@ -113,4 +113,4 @@ const productDeatils = () => {
       );
 }
 
-export default productDeatils
+export default ProductDeatils

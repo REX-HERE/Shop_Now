@@ -1,6 +1,9 @@
 import React from 'react'
 
-const footer = () => {
+// import "../ui/css/style.css";
+// import "../ui/js/script";
+
+const Footer = () => {
     return (
         <div>
           <meta charSet="utf-8" />
@@ -8,7 +11,7 @@ const footer = () => {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <title>E-Commerce Website</title>
           <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossOrigin="anonymous" />
-          <link rel="stylesheet" href="css/style.css" />
+          <link rel="stylesheet" href="../ui/css/style.css" />
           <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossOrigin="anonymous" />{/* fontawesom cdn link */}
           <link href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
           {/* font */} 
@@ -90,4 +93,4 @@ const footer = () => {
       );
 }
 
-export default footer
+export default Footer

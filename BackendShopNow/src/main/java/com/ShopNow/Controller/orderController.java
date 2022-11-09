@@ -24,13 +24,13 @@ public class orderController {
             return 0;
         }
         String userId = "";
-        List<String> productIdList = new ArrayList<>();
+//        List<String> productIdList = new ArrayList<>();
         userId = cartData.get(0).getUserId();
 
-        cartData.forEach((tuple)->{
-            productIdList.add(tuple.getProductId());
-        });
-        return orderDao.insertOrder(productIdList, userId);
+//        cartData.forEach((tuple)->{
+//            productIdList.add(tuple.getProductId());
+//        });
+        return orderDao.insertOrder(cartData, userId);
     }
 
 

@@ -1,8 +1,7 @@
 import React from 'react'
 
-const navbar = () => {
+const Navbar = () => {
 
-  
   return (
     <div>
       <meta charSet="utf-8" />
@@ -10,7 +9,7 @@ const navbar = () => {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>E-Commerce Website</title>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossOrigin="anonymous" />
-      <link rel="stylesheet" href="css/style.css" />
+      {/* <link rel="stylesheet" href="../ui/css/style.css" /> */}
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossOrigin="anonymous" />{/* fontawesom cdn link */}
       <link href="https://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
       {/* font */} 
@@ -28,7 +27,7 @@ const navbar = () => {
             <div className="input-group mt-3">
               <input type="text" className="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2" />
               <div className="input-group-append">
-                <button className="btn btn-primary" type="button" id="button-addon2"><i className="fas fa-search" /></button>
+                {/* <button className="btn btn-primary" type="button" id="button-addon2"><i className="fas fa-search" /></button> */}
               </div>
             </div>
           </div>
@@ -74,5 +73,5 @@ const navbar = () => {
   );
 }
 
-export default navbar
+export default Navbar;
 
