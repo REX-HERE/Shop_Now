@@ -15,7 +15,6 @@ public class orderData {
     private String orderId;
     private Time OrderTime;
     private String orderAddress;
-    private List<product> productIdList;
-
+    private List<productOrderData> productDataList;
 
 }

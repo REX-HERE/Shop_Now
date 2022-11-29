@@ -1,0 +1,123 @@
+body {
+    background-color: #F2F2F2;
+  }
+  table.header {
+    width: 40%;
+    pading-top:25px;
+    border-bottom: 15px solid #F2F2F2;
+    background-color: #F7F6F9;
+  }
+  table.orderinfo {
+    width: 40%;
+    pading-top:25px;
+    border-bottom: 15px solid #F2F2F2;
+    background-color: white;
+  }
+  
+  table.items {
+    width: 40%;
+    pading-top:25px;
+    background-color: white;
+    border-bottom: 15px solid #F2F2F2;
+  }
+  
+  table.payment {
+    width: 40%;
+    pading-top:25px;
+    background-color: white;
+    border-bottom: 15px solid #F2F2F2;
+  }
+  
+  table.footer {
+    width: 40%;
+    pading-top:25px;
+    background-color: #F8F7FA;
+  }
+  
+  table.header td {
+    padding: 10px;
+    font-family: Verdana;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  table.orderinfo td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    font-family: Verdana;
+    font-size: 15px;
+  }
+  
+  table.items td {
+    padding:10px;
+    font-family: Verdana;
+    font-size: 15px;
+    
+  }
+  
+  table.payment td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    font-family: Verdana;
+    font-size: 15px;
+  }
+  
+  table.footer td {
+    padding-top: 10px;
+  }
+  
+  table.orderinfo tr:last-child td {
+    border-bottom: 0;
+  }
+  
+  table.payment tr:last-child td {
+    border-bottom: 0;
+  }
+  
+  table.header td:nth-child(2) {
+    text-align: right; 
+    font-size: 17px;
+    color: #473DD6;
+  }
+  
+  table.orderinfo td:nth-child(2) {
+    text-align: right; 
+  }
+  
+  table.items td:nth-child(2) {
+    text-align: left; 
+  }
+  
+  table.items td:nth-child(3) {
+    text-align: right; 
+  }
+  
+  table.payment td:nth-child(2) {
+    text-align: right; 
+  }
+  
+  .Refund {
+    color:#473DD6;
+    font-size: 18px;
+  }
+  
+  .itemID{
+    color:grey;
+    font-size:14px;
+  }
+  
+  .itemquantity {
+    color:grey;
+    font-size:14px;
+  }
+  
+  button {
+    width: 565px;
+    height: 50px;
+    border-radius: 20px;
+    font-family: Verdana;
+    font-size: 15px;
+    text-align: centre;
+    color: white;
+    background-color: #473DD6;
+  }
